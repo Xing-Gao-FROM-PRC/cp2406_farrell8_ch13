@@ -1,9 +1,7 @@
 import java.nio.file.*;
 import java.io.*;
-public class ReadEmployeeFile2
-{
-   public static void main(String[] args)
-   {
+public class ReadEmployeeFile2{
+   public static void main(String[] args){
       Path file =
          Paths.get("C:\\Java\\Chapter.13\\Employees.txt");
       String[] array = new String[3];
@@ -15,14 +13,12 @@ public class ReadEmployeeFile2
       double gross;
       final double HRS_IN_WEEK = 40;
       double total = 0;
-       try
-       {
+       try{
          InputStream input = new BufferedInputStream(Files.newInputStream(file));
          BufferedReader reader = new BufferedReader(new InputStreamReader(input));
          System.out.println();        
          s = reader.readLine();
-         while(s != null)
-         {
+         while(s != null){
             array = s.split(delimiter);
             id = Integer.parseInt(array[0]);
             name = array[1];
@@ -34,8 +30,7 @@ public class ReadEmployeeFile2
          }
          reader.close();
       }
-      catch(Exception e)
-      {
+      catch(Exception e){
         System.out.println("Message: " + e);
       }
       System.out.println("  Total gross payroll is $" + total);

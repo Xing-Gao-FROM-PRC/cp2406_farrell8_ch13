@@ -1,9 +1,7 @@
 import java.util.Scanner;
 import java.nio.file.*;
-public class PathDemo2
-{
-   public static void main(String[] args)
-   {
+public class PathDemo2{
+   public static void main(String[] args){
        String name;
        Scanner keyboard = new Scanner(System.in);
        System.out.print("Enter a file name >> ");

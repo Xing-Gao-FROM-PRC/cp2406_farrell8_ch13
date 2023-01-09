@@ -1,16 +1,13 @@
 import java.nio.file.*;
 import java.nio.file.attribute.*;
 import java.io.IOException;
-public class PathDemo6
-{
-   public static void main(String[] args)
-   {
+public class PathDemo6{
+   public static void main(String[] args){
       Path file1 =
          Paths.get("C:\\Java\\Chapter.13\\Data.txt");
       Path file2 =
          Paths.get("C:\\Java\\Chapter.13\\Data2.txt");
-      try
-      {
+      try{
          BasicFileAttributes attr1 =
             Files.readAttributes(file1, BasicFileAttributes.class);
          BasicFileAttributes attr2 =
@@ -27,8 +24,7 @@ public class PathDemo6
             else
                 System.out.println("file1 and file2 were created at the same time");
       }
-      catch(IOException e)
-      {
+      catch(IOException e){
           System.out.println("IO Exception");
       }
    }

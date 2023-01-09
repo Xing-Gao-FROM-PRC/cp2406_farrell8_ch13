@@ -2,10 +2,8 @@ import java.nio.file.*;
 import java.io.*;
 import static java.nio.file.StandardOpenOption.*;
 import java.util.Scanner;
-public class WriteEmployeeFile
-{
-   public static void main(String[] args)
-   {
+public class WriteEmployeeFile{
+   public static void main(String[] args){
       Scanner input = new Scanner(System.in);
       Path file =
          Paths.get("C:\\Java\\Chapter.13\\Employees.txt");
@@ -15,14 +13,12 @@ public class WriteEmployeeFile
       String name;
       double payRate;
       final int QUIT = 999;
-      try
-      {
+      try{
          OutputStream output = new BufferedOutputStream(Files.newOutputStream(file, CREATE));
          BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
          System.out.print("Enter employee ID number >> ");
          id = input.nextInt();
-         while(id != QUIT)
-         {
+         while(id != QUIT){
             System.out.print("Enter name for employee #" + id + " >> ");
             input.nextLine();
             name = input.nextLine();
@@ -36,8 +32,7 @@ public class WriteEmployeeFile
          }
          writer.close();
       }
-      catch(Exception e)
-      {
+      catch(Exception e){
          System.out.println("Message: " + e);
       }
    }

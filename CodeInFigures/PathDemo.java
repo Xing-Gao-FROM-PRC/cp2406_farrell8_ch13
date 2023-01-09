@@ -1,8 +1,7 @@
 import java.nio.file.*;
 public class PathDemo
 {
-   public static void main(String[] args)
-   {
+   public static void main(String[] args){
       Path filePath =
          Paths.get("C:\\Java\\Chapter.13\\Data.txt");
       int count = filePath.getNameCount();

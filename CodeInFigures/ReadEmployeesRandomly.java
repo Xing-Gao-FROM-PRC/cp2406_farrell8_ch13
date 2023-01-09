@@ -4,10 +4,8 @@ import java.nio.channels.FileChannel;
 import java.nio.ByteBuffer;
 import static java.nio.file.StandardOpenOption.*;
 import java.util.Scanner;
-public class ReadEmployeesRandomly
-{
-   public static void main(String[] args)  
-   {
+public class ReadEmployeesRandomly{
+   public static void main(String[] args)  {
       Scanner keyBoard = new Scanner(System.in);
       Path file =
          Paths.get("C:\\Java\\Chapter.13\\RandomEmployees.txt");
@@ -20,14 +18,12 @@ public class ReadEmployeesRandomly
       String idString;
       int id;
       final String QUIT = "999";
-      try
-      {
+      try{
          fc = (FileChannel)Files.newByteChannel(file, READ, WRITE);
          System.out.print("Enter employee ID number or " +
             QUIT + " to quit >> ");
          idString = keyBoard.nextLine();
-         while(!idString.equals(QUIT))
-         {
+         while(!idString.equals(QUIT)){
             id = Integer.parseInt(idString); 
             buffer = ByteBuffer.wrap(data);
             fc.position(id * RECSIZE);
@@ -40,8 +36,7 @@ public class ReadEmployeesRandomly
          }
          fc.close();
       }
-      catch (Exception e)
-      {
+      catch (Exception e){
           System.out.println("Error message: " + e);
       }
    }
